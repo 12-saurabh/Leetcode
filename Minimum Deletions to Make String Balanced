@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int minimumDeletions(string s) {
+        int n=s.length();
+        stack<char>st;
+        int count=0;
+
+        for(char &i:s){
+            if(i=='a'){
+                if(!st.empty() && st.top()=='b'){
+                    count++;
+                    st.pop();
+                }
+
+            }
+            else{
+                st.push(i);
+            }
+
+        }
+
+        return count;
+        
+    }
+};
